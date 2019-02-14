@@ -28,19 +28,26 @@ type
     ListBoxItem1: TListBoxItem;
     ListBoxItem2: TListBoxItem;
     StyleBook1: TStyleBook;
-    FrameEvent1: TFrameEvent;
     ListBoxItem3: TListBoxItem;
-    FramePartner1: TFramePartner;
+    Layout1: TLayout;
+    Edit1: TEdit;
+    Edit2: TEdit;
+    Button1: TButton;
     procedure SpeedButton1Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure ListBoxItem1Click(Sender: TObject);
     procedure ListBoxItem2Click(Sender: TObject);
     procedure ListBoxItem3Click(Sender: TObject);
+    procedure FormDestroy(Sender: TObject);
+    procedure Button1Click(Sender: TObject);
   private
     { Private declarations }
+    procedure HideFrame(Frame: TFrame);
     procedure HideAllFrames;
   public
     { Public declarations }
+    FrameEvent1: TFrameEvent;
+    FramePartner1: TFramePartner;
   end;
 
 var
@@ -53,15 +60,32 @@ implementation
 uses DataModuleDataSnap;
 
 
-{** 타이틀 변경 *}
+procedure TfrmMain.HideFrame(Frame: TFrame);
+begin
+  if Frame <> nil then
+  begin
+    Frame.Align := TAlignLayout.None;
+    Frame.Position.X := - Frame.Width;
+  end;
+end;
+
+procedure TfrmMain.FormDestroy(Sender: TObject);
+begin
+  if FrameEvent1 <> nil then
+    FrameEvent1.Free;
+  if FramePartner1 <> nil then
+    FramePartner1.Free;
+end;
 
 procedure TfrmMain.HideAllFrames;
 begin
-  FrameEvent1.Align := TAlignLayout.None;
-  FrameEvent1.Position.X := - FrameEvent1.Width;
+  HideFrame(FrameEvent1);
+  HideFrame(FramePartner1);
+end;
 
-  FramePartner1.Align := TAlignLayout.None;
-  FramePartner1.Position.X := - FramePartner1.Width;
+procedure TfrmMain.Button1Click(Sender: TObject);
+begin
+  DMDataSnap.SQLConnection1.Connected := True;
 end;
 
 procedure TfrmMain.FormCreate(Sender: TObject);
@@ -76,7 +100,16 @@ begin
   HideAllFrames;
 
   MultiView1.HideMaster;
+
+  if FrameEvent1 = nil then
+  begin
+    FrameEvent1 := TFrameEvent.Create(Self);
+    FrameEvent1.Parent := Self;
+    FrameEvent1.Align := TAlignLayout.None;
+  end;
+
   FrameEvent1.Position.X := 1;
+  FrameEvent1.Align := TAlignLayout.Client;
 end;
 
 procedure TfrmMain.ListBoxItem2Click(Sender: TObject);
@@ -84,7 +117,6 @@ begin
   HideAllFrames;
 
   MultiView1.HideMaster;
-  FramePartner1.Position.X := 1;
 end;
 
 procedure TfrmMain.ListBoxItem3Click(Sender: TObject);
@@ -92,7 +124,16 @@ begin
   HideAllFrames;
 
   MultiView1.HideMaster;
+
+  if FramePartner1 = nil then
+  begin
+    FramePartner1 := TFramePartner.Create(Self);
+    FramePartner1.Parent := Self;
+    FramePartner1.Align := TAlignLayout.None;
+  end;
+
   FramePartner1.Position.X := 1;
+  FramePartner1.Align := TAlignLayout.Client;
 end;
 
 procedure TfrmMain.SpeedButton1Click(Sender: TObject);

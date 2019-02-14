@@ -1,4 +1,4 @@
-﻿object frmMain: TfrmMain
+object frmMain: TfrmMain
   Left = 528
   Top = 144
   Caption = 'Form1'
@@ -10,6 +10,7 @@
   FormFactor.Height = 480
   FormFactor.Devices = [Desktop]
   OnCreate = FormCreate
+  OnDestroy = FormDestroy
   Left = 528
   Top = 144
   DesignerMasterStyle = 3
@@ -40,107 +41,6 @@
       end>
     Left = 88
     Top = 448
-  end
-  inline FrameEvent1: TFrameEvent
-    Align = Client
-    Size.Width = 288.000000000000000000
-    Size.Height = 501.000000000000000000
-    Size.PlatformDefault = False
-    inherited TabControl1: TTabControl
-      Size.Width = 288.000000000000000000
-      Size.Height = 501.000000000000000000
-      Sizes = (
-        288s
-        501s
-        288s
-        501s)
-      inherited TabItem1: TTabItem
-        ExplicitSize.cx = 8.000000000000000000
-        ExplicitSize.cy = 8.000000000000000000
-        inherited ListView1: TListView
-          Size.Width = 288.000000000000000000
-          Size.Height = 501.000000000000000000
-        end
-      end
-      inherited TabItem2: TTabItem
-        ExplicitSize.cx = 8.000000000000000000
-        ExplicitSize.cy = 8.000000000000000000
-        inherited ListBox2: TListBox
-          Size.Width = 268.000000000000000000
-          Size.Height = 501.000000000000000000
-          Viewport.Width = 268.000000000000000000
-          Viewport.Height = 501.000000000000000000
-          inherited ListBoxItem3: TListBoxItem
-            inherited edtManager: TEdit
-              Size.Height = 44.000000000000000000
-            end
-          end
-          inherited ListBoxItem4: TListBoxItem
-            inherited edtEvent: TEdit
-              Size.Height = 44.000000000000000000
-            end
-          end
-          inherited ListBoxItem5: TListBoxItem
-            inherited DateEditFrom: TDateEdit
-              Size.Height = 44.000000000000000000
-            end
-          end
-          inherited ListBoxItem6: TListBoxItem
-            inherited DateEditTo: TDateEdit
-              Size.Height = 44.000000000000000000
-            end
-          end
-          inherited ListBoxItem9: TListBoxItem
-            inherited edtNight: TEdit
-              Size.Height = 44.000000000000000000
-            end
-            inherited Label1: TLabel
-              Size.Height = 44.000000000000000000
-            end
-            inherited edtDay: TEdit
-              Size.Height = 44.000000000000000000
-            end
-            inherited Label2: TLabel
-              Size.Height = 44.000000000000000000
-            end
-          end
-          inherited ListBoxItem7: TListBoxItem
-            inherited edtCustomer: TEdit
-              Size.Height = 44.000000000000000000
-            end
-          end
-          inherited ListBoxItem8: TListBoxItem
-            inherited edtMobile: TEdit
-              Size.Height = 44.000000000000000000
-            end
-            inherited Button1: TButton
-              Position.X = -45.000000000000000000
-              Size.Height = 44.000000000000000000
-            end
-          end
-          inherited ListBoxHeader1: TListBoxHeader
-            Size.Width = 268.000000000000000000
-          end
-        end
-      end
-    end
-    inherited GestureManager1: TGestureManager
-      Left = 200
-      Top = 408
-      GestureData = <
-        item
-          Control = FrameEvent1.TabControl1
-          Collection = <
-            item
-              Action = FrameEvent1.NextTabAction1
-              GestureID = sgiLeft
-            end
-            item
-              Action = FrameEvent1.PreviousTabAction1
-              GestureID = sgiRight
-            end>
-        end>
-    end
   end
   object MultiView1: TMultiView
     Mode = Panel
@@ -186,92 +86,37 @@
       end
     end
   end
-  inline FramePartner1: TFramePartner
+  object Layout1: TLayout
     Align = Client
     Size.Width = 288.000000000000000000
     Size.Height = 501.000000000000000000
     Size.PlatformDefault = False
-    inherited TabControl1: TTabControl
-      Size.Width = 288.000000000000000000
-      Size.Height = 501.000000000000000000
-      TabHeight = 49.000000000000000000
-      Sizes = (
-        288s
-        452s
-        288s
-        452s)
-      inherited TabItem1: TTabItem
-        Size.Width = 144.000000000000000000
-        Size.Height = 49.000000000000000000
-        ExplicitSize.cx = 69.000000000000000000
-        ExplicitSize.cy = 26.000000000000000000
-        inherited ListView1: TListView
-          Size.Width = 288.000000000000000000
-          Size.Height = 452.000000000000000000
-        end
-      end
-      inherited TabItem2: TTabItem
-        Size.Width = 144.000000000000000000
-        Size.Height = 49.000000000000000000
-        ExplicitSize.cx = 69.000000000000000000
-        ExplicitSize.cy = 26.000000000000000000
-        inherited ListBox1: TListBox
-          Size.Width = 288.000000000000000000
-          Size.Height = 452.000000000000000000
-          Viewport.Width = 288.000000000000000000
-          Viewport.Height = 452.000000000000000000
-          inherited ListBoxItem1: TListBoxItem
-            inherited edtName: TEdit
-              Position.X = -56.000000000000000000
-              Size.Height = 44.000000000000000000
-            end
-          end
-          inherited ListBoxItem2: TListBoxItem
-            inherited edtPresident: TEdit
-              Position.X = -56.000000000000000000
-              Size.Height = 44.000000000000000000
-            end
-          end
-          inherited ListBoxItem3: TListBoxItem
-            inherited edtDepart: TEdit
-              Position.X = -56.000000000000000000
-              Size.Height = 44.000000000000000000
-            end
-          end
-          inherited 담당자: TListBoxItem
-            inherited edtStaff: TEdit
-              Position.X = -56.000000000000000000
-              Size.Height = 44.000000000000000000
-            end
-          end
-          inherited 연락처: TListBoxItem
-            inherited edtPhone: TEdit
-              Position.X = -56.000000000000000000
-              Size.Height = 44.000000000000000000
-            end
-          end
-          inherited WWW: TListBoxItem
-            inherited edtWeb: TEdit
-              Position.X = -56.000000000000000000
-              Size.Height = 44.000000000000000000
-            end
-          end
-          inherited 메모: TListBoxItem
-            inherited Memo1: TMemo
-              Viewport.Width = 347.000000000000000000
-              Viewport.Height = 95.000000000000000000
-            end
-          end
-        end
-      end
+    TabOrder = 11
+    object Edit1: TEdit
+      Touch.InteractiveGestures = [LongTap, DoubleTap]
+      TabOrder = 11
+      Text = '192.168.1.12'
+      Position.X = 42.000000000000000000
+      Position.Y = 82.000000000000000000
+      Margins.Left = 50.000000000000000000
+      Size.Width = 121.000000000000000000
+      Size.Height = 32.000000000000000000
+      Size.PlatformDefault = False
     end
-    inherited ClientDataSet2: TClientDataSet
-      Left = 352
-      Top = 416
+    object Edit2: TEdit
+      Touch.InteractiveGestures = [LongTap, DoubleTap]
+      TabOrder = 12
+      Text = '211'
+      Position.X = 42.000000000000000000
+      Position.Y = 114.000000000000000000
+      Margins.Left = 50.000000000000000000
     end
-    inherited ClientDataSet3: TClientDataSet
-      Left = 424
-      Top = 424
+    object Button1: TButton
+      Position.X = 42.000000000000000000
+      Position.Y = 152.000000000000000000
+      TabOrder = 13
+      Text = #47196#44536#51064
+      OnClick = Button1Click
     end
   end
 end

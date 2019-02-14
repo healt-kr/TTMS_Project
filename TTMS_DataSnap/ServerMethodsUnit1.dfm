@@ -40,6 +40,7 @@ object ServerMethods1: TServerMethods1
     Top = 240
   end
   object qryPartnerDetail: TFDQuery
+    Active = True
     Connection = FDConnection1
     SQL.Strings = (
       'SELECT *'
