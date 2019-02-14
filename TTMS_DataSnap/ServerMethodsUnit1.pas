@@ -16,6 +16,10 @@ type
     FDConnection1: TFDConnection;
     FDQuery1: TFDQuery;
     DataSetProvider1: TDataSetProvider;
+    qryPartnerList: TFDQuery;
+    PartnerListProvider: TDataSetProvider;
+    qryPartnerDetail: TFDQuery;
+    PartnerDetailProvider: TDataSetProvider;
   private
     { Private declarations }
   public

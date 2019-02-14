@@ -39,16 +39,22 @@ type
     edtMobile: TEdit;
     Button1: TButton;
     ListBoxHeader1: TListBoxHeader;
-    BindingsList1: TBindingsList;
-    LinkListControlToField1: TLinkListControlToField;
-    LinkControlToField9: TLinkControlToField;
     GestureManager1: TGestureManager;
     ActionList1: TActionList;
     NextTabAction1: TNextTabAction;
     PreviousTabAction1: TPreviousTabAction;
     ChangeTabAction1: TChangeTabAction;
-    BindSourceDB2: TBindSourceDB;
     ClientDataSet1: TClientDataSet;
+    BindSourceDB1: TBindSourceDB;
+    BindingsList1: TBindingsList;
+    LinkListControlToField1: TLinkListControlToField;
+    LinkControlToField1: TLinkControlToField;
+    LinkControlToField2: TLinkControlToField;
+    LinkControlToField3: TLinkControlToField;
+    LinkControlToField4: TLinkControlToField;
+    LinkControlToField5: TLinkControlToField;
+    LinkControlToField6: TLinkControlToField;
+    LinkControlToField7: TLinkControlToField;
     procedure TabControl1Change(Sender: TObject);
     procedure ListView1ItemClick(const Sender: TObject;
       const AItem: TListViewItem);
@@ -62,7 +68,7 @@ implementation
 
 {$R *.fmx}
 
-uses EventForm;
+uses EventForm, MainForm;
 
 procedure TFrameEvent.ListView1ItemClick(const Sender: TObject;
   const AItem: TListViewItem);
@@ -73,9 +79,9 @@ end;
 procedure TFrameEvent.TabControl1Change(Sender: TObject);
 begin
   if TabControl1.ActiveTab = TabItem1 then
-      MainForm.Text1.Text := '행사 목록'
+      frmMain.Text1.Text := '행사 목록'
   else if TabControl1.ActiveTab = TabItem2 then
-      MainForm.Text1.Text := '행사 정보';
+      frmMain.Text1.Text := '행사 정보';
 end;
 
 end.

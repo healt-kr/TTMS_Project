@@ -61,6 +61,7 @@ object FrameEvent: TFrameEvent
       object edtPartner: TEdit
         Touch.InteractiveGestures = [LongTap, DoubleTap]
         TabOrder = 0
+        Text = #44867#48176#45804
         Position.X = 224.000000000000000000
         Position.Y = 8.000000000000000000
       end
@@ -103,7 +104,7 @@ object FrameEvent: TFrameEvent
             Touch.InteractiveGestures = [LongTap, DoubleTap]
             Align = Left
             TabOrder = 0
-            Text = #54616#50752#51060' 2'#48149'3'#51068
+            Text = #54616#50752#51060'-'#44264#54532#53804#50612
             TextSettings.VertAlign = Trailing
             Position.X = 100.000000000000000000
             Margins.Left = 100.000000000000000000
@@ -216,7 +217,7 @@ object FrameEvent: TFrameEvent
             Touch.InteractiveGestures = [LongTap, DoubleTap]
             Align = Left
             TabOrder = 2
-            Text = '010-1234-1234'
+            Text = '010-3456-5487'
             TextSettings.VertAlign = Trailing
             Position.X = 100.000000000000000000
             Margins.Left = 100.000000000000000000
@@ -226,7 +227,7 @@ object FrameEvent: TFrameEvent
           end
           object Button1: TButton
             Align = MostRight
-            Position.X = 440.000000000000000000
+            Position.X = -70.000000000000000000
             Size.Width = 89.000000000000000000
             Size.Height = 19.000000000000000000
             Size.PlatformDefault = False
@@ -242,28 +243,6 @@ object FrameEvent: TFrameEvent
           TabOrder = 0
         end
       end
-    end
-  end
-  object BindingsList1: TBindingsList
-    Methods = <>
-    OutputConverters = <>
-    Left = 36
-    Top = 445
-    object LinkListControlToField1: TLinkListControlToField
-      Category = 'Quick Bindings'
-      DataSource = BindSourceDB2
-      FieldName = 'event_name'
-      Control = ListView1
-      FillExpressions = <>
-      FillHeaderExpressions = <>
-      FillBreakGroups = <>
-    end
-    object LinkControlToField9: TLinkControlToField
-      Category = 'Quick Bindings'
-      DataSource = BindSourceDB2
-      FieldName = 'partner_name'
-      Control = edtPartner
-      Track = False
     end
   end
   object GestureManager1: TGestureManager
@@ -299,19 +278,83 @@ object FrameEvent: TFrameEvent
       Category = 'Tab'
     end
   end
-  object BindSourceDB2: TBindSourceDB
-    DataSet = ClientDataSet1
-    ScopeMappings = <>
-    Left = 376
-    Top = 448
-  end
   object ClientDataSet1: TClientDataSet
     Active = True
     Aggregates = <>
     Params = <>
     ProviderName = 'DataSetProvider1'
     RemoteServer = DMDataSnap.DSProviderConnection1
-    Left = 472
-    Top = 448
+    Left = 288
+    Top = 360
+  end
+  object BindSourceDB1: TBindSourceDB
+    DataSet = ClientDataSet1
+    ScopeMappings = <>
+    Left = 264
+    Top = 280
+  end
+  object BindingsList1: TBindingsList
+    Methods = <>
+    OutputConverters = <>
+    Left = 20
+    Top = 5
+    object LinkListControlToField1: TLinkListControlToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB1
+      FieldName = 'event_name'
+      Control = ListView1
+      FillExpressions = <>
+      FillHeaderExpressions = <>
+      FillBreakGroups = <>
+    end
+    object LinkControlToField1: TLinkControlToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB1
+      FieldName = 'partner_name'
+      Control = edtPartner
+      Track = False
+    end
+    object LinkControlToField2: TLinkControlToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB1
+      FieldName = 'event_name'
+      Control = edtEvent
+      Track = False
+    end
+    object LinkControlToField3: TLinkControlToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB1
+      FieldName = 'day'
+      Control = edtDay
+      Track = False
+    end
+    object LinkControlToField4: TLinkControlToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB1
+      FieldName = 'customer_name'
+      Control = edtCustomer
+      Track = False
+    end
+    object LinkControlToField5: TLinkControlToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB1
+      FieldName = 'event_start_date'
+      Control = DateEditFrom
+      Track = False
+    end
+    object LinkControlToField6: TLinkControlToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB1
+      FieldName = 'manager_name'
+      Control = edtManager
+      Track = False
+    end
+    object LinkControlToField7: TLinkControlToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB1
+      FieldName = 'mobile'
+      Control = edtMobile
+      Track = False
+    end
   end
 end

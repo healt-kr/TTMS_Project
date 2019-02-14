@@ -7,7 +7,7 @@
     Size.Width = 679.000000000000000000
     Size.Height = 610.000000000000000000
     Size.PlatformDefault = False
-    TabIndex = 1
+    TabIndex = 0
     TabOrder = 0
     TabPosition = PlatformDefault
     Sizes = (
@@ -19,13 +19,15 @@
       CustomIcon = <
         item
         end>
-      IsSelected = False
+      IsSelected = True
       Size.Width = 69.000000000000000000
       Size.Height = 26.000000000000000000
       Size.PlatformDefault = False
       StyleLookup = ''
       TabOrder = 0
       Text = 'TabItem1'
+      ExplicitSize.cx = 69.000000000000000000
+      ExplicitSize.cy = 26.000000000000000000
       object ListView1: TListView
         ItemAppearanceClassName = 'TListItemAppearance'
         ItemEditAppearanceClassName = 'TListItemShowCheckAppearance'
@@ -44,13 +46,15 @@
       CustomIcon = <
         item
         end>
-      IsSelected = True
+      IsSelected = False
       Size.Width = 69.000000000000000000
       Size.Height = 26.000000000000000000
       Size.PlatformDefault = False
       StyleLookup = ''
       TabOrder = 0
       Text = 'TabItem2'
+      ExplicitSize.cx = 69.000000000000000000
+      ExplicitSize.cy = 26.000000000000000000
       object ListBox1: TListBox
         Align = Client
         Size.Width = 679.000000000000000000
@@ -66,10 +70,11 @@
         object ListBoxItem1: TListBoxItem
           TabOrder = 0
           Text = #49345#54840#47749
-          object Edit1: TEdit
+          object edtName: TEdit
             Touch.InteractiveGestures = [LongTap, DoubleTap]
             Align = Right
             TabOrder = 0
+            Text = #44867#48176#45804
             Position.X = 575.000000000000000000
             Size.Width = 100.000000000000000000
             Size.Height = 19.000000000000000000
@@ -80,10 +85,11 @@
           Position.Y = 19.000000000000000000
           TabOrder = 1
           Text = #45824#54364#51088
-          object Edit2: TEdit
+          object edtPresident: TEdit
             Touch.InteractiveGestures = [LongTap, DoubleTap]
             Align = Right
             TabOrder = 0
+            Text = #51221#46041#44540
             Position.X = 575.000000000000000000
             Size.Width = 100.000000000000000000
             Size.Height = 19.000000000000000000
@@ -94,10 +100,11 @@
           Position.Y = 38.000000000000000000
           TabOrder = 2
           Text = #45812#45817#48512#49436
-          object Edit3: TEdit
+          object edtDepart: TEdit
             Touch.InteractiveGestures = [LongTap, DoubleTap]
             Align = Right
             TabOrder = 0
+            Text = '010-5255-2016'
             Position.X = 575.000000000000000000
             Size.Width = 100.000000000000000000
             Size.Height = 19.000000000000000000
@@ -108,7 +115,7 @@
           Position.Y = 57.000000000000000000
           TabOrder = 3
           Text = #45812#45817#51088
-          object Edit4: TEdit
+          object edtStaff: TEdit
             Touch.InteractiveGestures = [LongTap, DoubleTap]
             Align = Right
             TabOrder = 0
@@ -122,10 +129,11 @@
           Position.Y = 76.000000000000000000
           TabOrder = 4
           Text = #50672#46973#52376
-          object Edit5: TEdit
+          object edtPhone: TEdit
             Touch.InteractiveGestures = [LongTap, DoubleTap]
             Align = Right
             TabOrder = 0
+            Text = '02-540-1951'
             Position.X = 575.000000000000000000
             Size.Width = 100.000000000000000000
             Size.Height = 19.000000000000000000
@@ -136,7 +144,7 @@
           Position.Y = 95.000000000000000000
           TabOrder = 5
           Text = 'WWW'
-          object Edit6: TEdit
+          object edtWeb: TEdit
             Touch.InteractiveGestures = [LongTap, DoubleTap]
             Align = Right
             TabOrder = 0
@@ -169,31 +177,48 @@
       end
     end
   end
-  object ClientDataSet1: TClientDataSet
+  object ActionList1: TActionList
+    Left = 96
+    Top = 352
+    object ChangeTabAction1: TChangeTabAction
+      Category = 'Tab'
+    end
+  end
+  object ClientDataSet2: TClientDataSet
+    Active = True
+    Aggregates = <>
+    Params = <
+      item
+        DataType = ftInteger
+        Name = 'SERIAL'
+        ParamType = ptInput
+        Value = 1
+      end>
+    ProviderName = 'PartnerDetailProvider'
+    RemoteServer = DMDataSnap.DSProviderConnection1
+    Left = 304
+    Top = 360
+  end
+  object ClientDataSet3: TClientDataSet
     Active = True
     Aggregates = <>
     Params = <>
-    ProviderName = 'DSPPartnerList'
+    ProviderName = 'PartnerListProvider'
     RemoteServer = DMDataSnap.DSProviderConnection1
-    Left = 320
-    Top = 472
-    object ClientDataSet1name: TStringField
-      FieldName = 'name'
-      Origin = 'name'
-      Size = 30
-    end
+    Left = 304
+    Top = 296
   end
   object BindSourceDB1: TBindSourceDB
-    DataSet = ClientDataSet1
+    DataSet = ClientDataSet3
     ScopeMappings = <>
-    Left = 392
-    Top = 264
+    Left = 408
+    Top = 296
   end
   object BindingsList1: TBindingsList
     Methods = <>
     OutputConverters = <>
-    Left = 276
-    Top = 261
+    Left = 100
+    Top = 269
     object LinkListControlToField1: TLinkListControlToField
       Category = 'Quick Bindings'
       DataSource = BindSourceDB1
@@ -203,12 +228,60 @@
       FillHeaderExpressions = <>
       FillBreakGroups = <>
     end
-  end
-  object ActionList1: TActionList
-    Left = 216
-    Top = 432
-    object ChangeTabAction1: TChangeTabAction
-      Category = 'Tab'
+    object LinkControlToField1: TLinkControlToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB2
+      FieldName = 'manager'
+      Control = edtStaff
+      Track = False
     end
+    object LinkControlToField2: TLinkControlToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB2
+      FieldName = 'phone'
+      Control = edtPhone
+      Track = False
+    end
+    object LinkControlToField3: TLinkControlToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB2
+      FieldName = 'name'
+      Control = edtName
+      Track = False
+    end
+    object LinkControlToField4: TLinkControlToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB2
+      FieldName = 'department'
+      Control = edtDepart
+      Track = False
+    end
+    object LinkControlToField5: TLinkControlToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB2
+      FieldName = 'memo'
+      Control = Memo1
+      Track = False
+    end
+    object LinkControlToField6: TLinkControlToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB2
+      FieldName = 'president'
+      Control = edtPresident
+      Track = False
+    end
+    object LinkControlToField7: TLinkControlToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB2
+      FieldName = 'website'
+      Control = edtWeb
+      Track = False
+    end
+  end
+  object BindSourceDB2: TBindSourceDB
+    DataSet = ClientDataSet2
+    ScopeMappings = <>
+    Left = 408
+    Top = 360
   end
 end

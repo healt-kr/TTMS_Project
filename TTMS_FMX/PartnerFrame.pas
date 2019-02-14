@@ -18,11 +18,6 @@ type
     TabItem1: TTabItem;
     TabItem2: TTabItem;
     ListView1: TListView;
-    ClientDataSet1: TClientDataSet;
-    ClientDataSet1name: TStringField;
-    BindSourceDB1: TBindSourceDB;
-    BindingsList1: TBindingsList;
-    LinkListControlToField1: TLinkListControlToField;
     ListBox1: TListBox;
     ListBoxItem1: TListBoxItem;
     ListBoxItem2: TListBoxItem;
@@ -31,15 +26,28 @@ type
     연락처: TListBoxItem;
     WWW: TListBoxItem;
     메모: TListBoxItem;
-    Edit1: TEdit;
-    Edit2: TEdit;
-    Edit3: TEdit;
-    Edit4: TEdit;
-    Edit5: TEdit;
-    Edit6: TEdit;
+    edtName: TEdit;
+    edtPresident: TEdit;
+    edtDepart: TEdit;
+    edtStaff: TEdit;
+    edtPhone: TEdit;
+    edtWeb: TEdit;
     Memo1: TMemo;
     ActionList1: TActionList;
     ChangeTabAction1: TChangeTabAction;
+    ClientDataSet2: TClientDataSet;
+    ClientDataSet3: TClientDataSet;
+    BindSourceDB1: TBindSourceDB;
+    BindingsList1: TBindingsList;
+    LinkListControlToField1: TLinkListControlToField;
+    BindSourceDB2: TBindSourceDB;
+    LinkControlToField1: TLinkControlToField;
+    LinkControlToField2: TLinkControlToField;
+    LinkControlToField3: TLinkControlToField;
+    LinkControlToField4: TLinkControlToField;
+    LinkControlToField5: TLinkControlToField;
+    LinkControlToField6: TLinkControlToField;
+    LinkControlToField7: TLinkControlToField;
     procedure ListView1ItemClick(const Sender: TObject;
       const AItem: TListViewItem);
   private
@@ -57,6 +65,13 @@ uses DataModuleDataSnap;
 procedure TFramePartner.ListView1ItemClick(const Sender: TObject;
   const AItem: TListViewItem);
 begin
+  with ClientDataSet2 do begin
+    Close;
+    ParamByName('serial').AsInteger
+      := ClientDataSet3.FieldByName('serial').AsInteger;
+    Open;
+  end;
+
   ChangeTabAction1.Tab := TabItem2;
   ChangeTabAction1.ExecuteTarget(nil);
 end;
