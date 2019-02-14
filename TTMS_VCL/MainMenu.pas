@@ -13,8 +13,9 @@ uses
 
 type
   TfrmMenu = class(TForm)
-    edtPass: TEdit;
+    Panel2: TPanel;
     Label1: TLabel;
+    edtPass: TEdit;
     btnPass: TButton;
     Panel1: TPanel;
     btnReservation: TButton;
@@ -27,9 +28,9 @@ type
     btnSubul: TButton;
     btnCustomer: TButton;
     btnBanking: TButton;
-    btnPackage: TButton;
     btnCancel: TButton;
     btnBackup: TButton;
+    Image1: TImage;
     procedure btnReservationClick(Sender: TObject);
     procedure edtPassKeyPress(Sender: TObject; var Key: Char);
     procedure btnManagerClick(Sender: TObject);
@@ -85,7 +86,6 @@ begin
         btnSubul.Enabled       := JSONData.GetValue<Boolean>('authority.subul');
         btnCustomer.Enabled    := JSONData.GetValue<Boolean>('authority.customer');
         btnBanking.Enabled     := JSONData.GetValue<Boolean>('authority.banking');
-        btnPackage.Enabled     := JSONData.GetValue<Boolean>('authority.package');
         btnCancel.Enabled      := JSONData.GetValue<Boolean>('authority.cancel');
         btnBackup.Enabled      := JSONData.GetValue<Boolean>('authority.backup');
         btnManager.Enabled     := JSONData.GetValue<Boolean>('authority.admin');
