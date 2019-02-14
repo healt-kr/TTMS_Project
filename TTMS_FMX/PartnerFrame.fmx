@@ -1,0 +1,214 @@
+﻿object FramePartner: TFramePartner
+  Size.Width = 679.000000000000000000
+  Size.Height = 610.000000000000000000
+  Size.PlatformDefault = False
+  object TabControl1: TTabControl
+    Align = Client
+    Size.Width = 679.000000000000000000
+    Size.Height = 610.000000000000000000
+    Size.PlatformDefault = False
+    TabIndex = 1
+    TabOrder = 0
+    TabPosition = PlatformDefault
+    Sizes = (
+      679s
+      584s
+      679s
+      584s)
+    object TabItem1: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = False
+      Size.Width = 69.000000000000000000
+      Size.Height = 26.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'TabItem1'
+      object ListView1: TListView
+        ItemAppearanceClassName = 'TListItemAppearance'
+        ItemEditAppearanceClassName = 'TListItemShowCheckAppearance'
+        HeaderAppearanceClassName = 'TListHeaderObjects'
+        FooterAppearanceClassName = 'TListHeaderObjects'
+        ItemIndex = 0
+        Align = Client
+        Size.Width = 679.000000000000000000
+        Size.Height = 584.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        OnItemClick = ListView1ItemClick
+      end
+    end
+    object TabItem2: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = True
+      Size.Width = 69.000000000000000000
+      Size.Height = 26.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'TabItem2'
+      object ListBox1: TListBox
+        Align = Client
+        Size.Width = 679.000000000000000000
+        Size.Height = 584.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        DisableFocusEffect = True
+        DefaultItemStyles.ItemStyle = ''
+        DefaultItemStyles.GroupHeaderStyle = ''
+        DefaultItemStyles.GroupFooterStyle = ''
+        Viewport.Width = 679.000000000000000000
+        Viewport.Height = 584.000000000000000000
+        object ListBoxItem1: TListBoxItem
+          TabOrder = 0
+          Text = #49345#54840#47749
+          object Edit1: TEdit
+            Touch.InteractiveGestures = [LongTap, DoubleTap]
+            Align = Right
+            TabOrder = 0
+            Position.X = 575.000000000000000000
+            Size.Width = 100.000000000000000000
+            Size.Height = 19.000000000000000000
+            Size.PlatformDefault = False
+          end
+        end
+        object ListBoxItem2: TListBoxItem
+          Position.Y = 19.000000000000000000
+          TabOrder = 1
+          Text = #45824#54364#51088
+          object Edit2: TEdit
+            Touch.InteractiveGestures = [LongTap, DoubleTap]
+            Align = Right
+            TabOrder = 0
+            Position.X = 575.000000000000000000
+            Size.Width = 100.000000000000000000
+            Size.Height = 19.000000000000000000
+            Size.PlatformDefault = False
+          end
+        end
+        object ListBoxItem3: TListBoxItem
+          Position.Y = 38.000000000000000000
+          TabOrder = 2
+          Text = #45812#45817#48512#49436
+          object Edit3: TEdit
+            Touch.InteractiveGestures = [LongTap, DoubleTap]
+            Align = Right
+            TabOrder = 0
+            Position.X = 575.000000000000000000
+            Size.Width = 100.000000000000000000
+            Size.Height = 19.000000000000000000
+            Size.PlatformDefault = False
+          end
+        end
+        object 담당자: TListBoxItem
+          Position.Y = 57.000000000000000000
+          TabOrder = 3
+          Text = #45812#45817#51088
+          object Edit4: TEdit
+            Touch.InteractiveGestures = [LongTap, DoubleTap]
+            Align = Right
+            TabOrder = 0
+            Position.X = 575.000000000000000000
+            Size.Width = 100.000000000000000000
+            Size.Height = 19.000000000000000000
+            Size.PlatformDefault = False
+          end
+        end
+        object 연락처: TListBoxItem
+          Position.Y = 76.000000000000000000
+          TabOrder = 4
+          Text = #50672#46973#52376
+          object Edit5: TEdit
+            Touch.InteractiveGestures = [LongTap, DoubleTap]
+            Align = Right
+            TabOrder = 0
+            Position.X = 575.000000000000000000
+            Size.Width = 100.000000000000000000
+            Size.Height = 19.000000000000000000
+            Size.PlatformDefault = False
+          end
+        end
+        object WWW: TListBoxItem
+          Position.Y = 95.000000000000000000
+          TabOrder = 5
+          Text = 'WWW'
+          object Edit6: TEdit
+            Touch.InteractiveGestures = [LongTap, DoubleTap]
+            Align = Right
+            TabOrder = 0
+            Position.X = 575.000000000000000000
+            Size.Width = 100.000000000000000000
+            Size.Height = 19.000000000000000000
+            Size.PlatformDefault = False
+          end
+        end
+        object 메모: TListBoxItem
+          Position.Y = 114.000000000000000000
+          Size.Width = 675.000000000000000000
+          Size.Height = 95.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 6
+          Text = #47700#47784
+          object Memo1: TMemo
+            Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+            DataDetectorTypes = []
+            Align = Right
+            Position.X = 328.000000000000000000
+            Size.Width = 347.000000000000000000
+            Size.Height = 95.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 1
+            Viewport.Width = 347.000000000000000000
+            Viewport.Height = 95.000000000000000000
+          end
+        end
+      end
+    end
+  end
+  object ClientDataSet1: TClientDataSet
+    Active = True
+    Aggregates = <>
+    Params = <>
+    ProviderName = 'DSPPartnerList'
+    RemoteServer = DMDataSnap.DSProviderConnection1
+    Left = 320
+    Top = 472
+    object ClientDataSet1name: TStringField
+      FieldName = 'name'
+      Origin = 'name'
+      Size = 30
+    end
+  end
+  object BindSourceDB1: TBindSourceDB
+    DataSet = ClientDataSet1
+    ScopeMappings = <>
+    Left = 392
+    Top = 264
+  end
+  object BindingsList1: TBindingsList
+    Methods = <>
+    OutputConverters = <>
+    Left = 276
+    Top = 261
+    object LinkListControlToField1: TLinkListControlToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB1
+      FieldName = 'name'
+      Control = ListView1
+      FillExpressions = <>
+      FillHeaderExpressions = <>
+      FillBreakGroups = <>
+    end
+  end
+  object ActionList1: TActionList
+    Left = 216
+    Top = 432
+    object ChangeTabAction1: TChangeTabAction
+      Category = 'Tab'
+    end
+  end
+end

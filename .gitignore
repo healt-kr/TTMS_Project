@@ -1,0 +1,9 @@
+*.local
+*.identcache
+*.res
+*.stat
+*.vlb
+TTMS_FMX/__history/
+TTMS_FMX/Android/
+TTMS_VCL/__history/
+TTMS_VCL/Win32/

@@ -1,0 +1,60 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{72A916F5-FE18-47D3-9BFB-2A8A48828664}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="TTMS_VCL\TTMS.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="TTMS_DataSnap\TTMS_DataSnap.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="TTMS_FMX\TTMS_FMX.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="TTMS">
+        <MSBuild Projects="TTMS_VCL\TTMS.dproj"/>
+    </Target>
+    <Target Name="TTMS:Clean">
+        <MSBuild Projects="TTMS_VCL\TTMS.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TTMS:Make">
+        <MSBuild Projects="TTMS_VCL\TTMS.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TTMS_DataSnap">
+        <MSBuild Projects="TTMS_DataSnap\TTMS_DataSnap.dproj"/>
+    </Target>
+    <Target Name="TTMS_DataSnap:Clean">
+        <MSBuild Projects="TTMS_DataSnap\TTMS_DataSnap.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TTMS_DataSnap:Make">
+        <MSBuild Projects="TTMS_DataSnap\TTMS_DataSnap.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TTMS_FMX">
+        <MSBuild Projects="TTMS_FMX\TTMS_FMX.dproj"/>
+    </Target>
+    <Target Name="TTMS_FMX:Clean">
+        <MSBuild Projects="TTMS_FMX\TTMS_FMX.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TTMS_FMX:Make">
+        <MSBuild Projects="TTMS_FMX\TTMS_FMX.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="TTMS;TTMS_DataSnap;TTMS_FMX"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="TTMS:Clean;TTMS_DataSnap:Clean;TTMS_FMX:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="TTMS:Make;TTMS_DataSnap:Make;TTMS_FMX:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

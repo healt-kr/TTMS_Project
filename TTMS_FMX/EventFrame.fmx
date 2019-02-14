@@ -1,0 +1,317 @@
+object FrameEvent: TFrameEvent
+  Size.Width = 549.000000000000000000
+  Size.Height = 581.000000000000000000
+  Size.PlatformDefault = False
+  object TabControl1: TTabControl
+    Touch.GestureManager = GestureManager1
+    Align = Client
+    Size.Width = 549.000000000000000000
+    Size.Height = 581.000000000000000000
+    Size.PlatformDefault = False
+    TabHeight = 49.000000000000000000
+    TabIndex = 0
+    TabOrder = 15
+    TabPosition = Dots
+    OnChange = TabControl1Change
+    Sizes = (
+      549s
+      581s
+      549s
+      581s)
+    object TabItem1: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = True
+      Size.Width = 8.000000000000000000
+      Size.Height = 8.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'TabItem1'
+      ExplicitSize.cx = 8.000000000000000000
+      ExplicitSize.cy = 8.000000000000000000
+      object ListView1: TListView
+        ItemAppearanceClassName = 'TListItemRightDetailAppearance'
+        ItemEditAppearanceClassName = 'TListItemRightDetailDeleteAppearance'
+        HeaderAppearanceClassName = 'TListHeaderObjects'
+        FooterAppearanceClassName = 'TListHeaderObjects'
+        ItemIndex = 0
+        Align = Client
+        Size.Width = 549.000000000000000000
+        Size.Height = 581.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        OnItemClick = ListView1ItemClick
+      end
+    end
+    object TabItem2: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = False
+      Size.Width = 8.000000000000000000
+      Size.Height = 8.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'TabItem2'
+      ExplicitSize.cx = 8.000000000000000000
+      ExplicitSize.cy = 8.000000000000000000
+      object edtPartner: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        TabOrder = 0
+        Position.X = 224.000000000000000000
+        Position.Y = 8.000000000000000000
+      end
+      object ListBox2: TListBox
+        Align = Client
+        Margins.Left = 10.000000000000000000
+        Margins.Right = 10.000000000000000000
+        Size.Width = 529.000000000000000000
+        Size.Height = 581.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = 'transparentlistboxstyle'
+        TabOrder = 1
+        DisableFocusEffect = True
+        DefaultItemStyles.ItemStyle = ''
+        DefaultItemStyles.GroupHeaderStyle = ''
+        DefaultItemStyles.GroupFooterStyle = ''
+        Viewport.Width = 529.000000000000000000
+        Viewport.Height = 581.000000000000000000
+        object ListBoxItem3: TListBoxItem
+          TabOrder = 0
+          Text = #45812#45817#51088
+          object edtManager: TEdit
+            Touch.InteractiveGestures = [LongTap, DoubleTap]
+            Align = Left
+            TabOrder = 0
+            Text = #49324#51109#45784
+            TextSettings.VertAlign = Trailing
+            Position.X = 100.000000000000000000
+            Margins.Left = 100.000000000000000000
+            Size.Width = 418.000000000000000000
+            Size.Height = 19.000000000000000000
+            Size.PlatformDefault = False
+          end
+        end
+        object ListBoxItem4: TListBoxItem
+          Position.Y = 19.000000000000000000
+          TabOrder = 1
+          Text = #54665#49324#47749
+          object edtEvent: TEdit
+            Touch.InteractiveGestures = [LongTap, DoubleTap]
+            Align = Left
+            TabOrder = 0
+            Text = #54616#50752#51060' 2'#48149'3'#51068
+            TextSettings.VertAlign = Trailing
+            Position.X = 100.000000000000000000
+            Margins.Left = 100.000000000000000000
+            Size.Width = 418.000000000000000000
+            Size.Height = 19.000000000000000000
+            Size.PlatformDefault = False
+          end
+        end
+        object ListBoxItem5: TListBoxItem
+          Position.Y = 38.000000000000000000
+          TabOrder = 2
+          Text = #54665#49324#44592#44036
+          object DateEditFrom: TDateEdit
+            Date = 43494.000000000000000000
+            DateFormatKind = Long
+            Align = Left
+            Margins.Left = 100.000000000000000000
+            Position.X = 100.000000000000000000
+            Size.Width = 418.000000000000000000
+            Size.Height = 19.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 1
+            TextSettings.VertAlign = Trailing
+          end
+        end
+        object ListBoxItem6: TListBoxItem
+          Position.Y = 57.000000000000000000
+          TabOrder = 3
+          object DateEditTo: TDateEdit
+            Date = 43497.000000000000000000
+            DateFormatKind = Long
+            Align = Left
+            Margins.Left = 100.000000000000000000
+            Position.X = 100.000000000000000000
+            Size.Width = 418.000000000000000000
+            Size.Height = 19.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 0
+            TextSettings.VertAlign = Trailing
+          end
+        end
+        object ListBoxItem9: TListBoxItem
+          Position.Y = 76.000000000000000000
+          TabOrder = 6
+          object edtNight: TEdit
+            Touch.InteractiveGestures = [LongTap, DoubleTap]
+            Align = Left
+            TabOrder = 0
+            Text = '3'
+            Position.X = 100.000000000000000000
+            Margins.Left = 100.000000000000000000
+            Size.Width = 29.000000000000000000
+            Size.Height = 19.000000000000000000
+            Size.PlatformDefault = False
+          end
+          object Label1: TLabel
+            Align = Left
+            AutoSize = True
+            Position.X = 129.000000000000000000
+            Size.Width = 25.000000000000000000
+            Size.Height = 19.000000000000000000
+            Size.PlatformDefault = False
+            Text = #48149
+            TabOrder = 6
+          end
+          object edtDay: TEdit
+            Touch.InteractiveGestures = [LongTap, DoubleTap]
+            Align = Left
+            TabOrder = 1
+            Text = '4'
+            TextSettings.HorzAlign = Center
+            Position.X = 154.000000000000000000
+            Size.Width = 33.000000000000000000
+            Size.Height = 19.000000000000000000
+            Size.PlatformDefault = False
+          end
+          object Label2: TLabel
+            Align = Left
+            AutoSize = True
+            Position.X = 187.000000000000000000
+            Size.Width = 25.000000000000000000
+            Size.Height = 19.000000000000000000
+            Size.PlatformDefault = False
+            Text = #51068
+            TabOrder = 2
+          end
+        end
+        object ListBoxItem7: TListBoxItem
+          Position.Y = 95.000000000000000000
+          TabOrder = 4
+          Text = #44256#44061#47749
+          object edtCustomer: TEdit
+            Touch.InteractiveGestures = [LongTap, DoubleTap]
+            Align = Left
+            TabOrder = 2
+            Text = #54861#44600#46041
+            TextSettings.VertAlign = Trailing
+            Position.X = 100.000000000000000000
+            Margins.Left = 100.000000000000000000
+            Size.Width = 418.000000000000000000
+            Size.Height = 19.000000000000000000
+            Size.PlatformDefault = False
+          end
+        end
+        object ListBoxItem8: TListBoxItem
+          Position.Y = 114.000000000000000000
+          TabOrder = 5
+          Text = #50672#46973#52376
+          object edtMobile: TEdit
+            Touch.InteractiveGestures = [LongTap, DoubleTap]
+            Align = Left
+            TabOrder = 2
+            Text = '010-1234-1234'
+            TextSettings.VertAlign = Trailing
+            Position.X = 100.000000000000000000
+            Margins.Left = 100.000000000000000000
+            Size.Width = 329.000000000000000000
+            Size.Height = 19.000000000000000000
+            Size.PlatformDefault = False
+          end
+          object Button1: TButton
+            Align = MostRight
+            Position.X = 440.000000000000000000
+            Size.Width = 89.000000000000000000
+            Size.Height = 19.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 3
+            Text = #51204#54868#44152#44592
+          end
+        end
+        object ListBoxHeader1: TListBoxHeader
+          Size.Width = 529.000000000000000000
+          Size.Height = 48.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = 'toolbarstyle'
+          TabOrder = 0
+        end
+      end
+    end
+  end
+  object BindingsList1: TBindingsList
+    Methods = <>
+    OutputConverters = <>
+    Left = 36
+    Top = 445
+    object LinkListControlToField1: TLinkListControlToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB2
+      FieldName = 'event_name'
+      Control = ListView1
+      FillExpressions = <>
+      FillHeaderExpressions = <>
+      FillBreakGroups = <>
+    end
+    object LinkControlToField9: TLinkControlToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB2
+      FieldName = 'partner_name'
+      Control = edtPartner
+      Track = False
+    end
+  end
+  object GestureManager1: TGestureManager
+    Sensitivity = 80.000000000000000000
+    Left = 160
+    Top = 448
+    GestureData = <
+      item
+        Control = TabControl1
+        Collection = <
+          item
+            Action = NextTabAction1
+            GestureID = sgiLeft
+          end
+          item
+            Action = PreviousTabAction1
+            GestureID = sgiRight
+          end>
+      end>
+  end
+  object ActionList1: TActionList
+    Left = 280
+    Top = 448
+    object NextTabAction1: TNextTabAction
+      Category = 'Tab'
+      TabControl = TabControl1
+    end
+    object PreviousTabAction1: TPreviousTabAction
+      Category = 'Tab'
+      TabControl = TabControl1
+    end
+    object ChangeTabAction1: TChangeTabAction
+      Category = 'Tab'
+    end
+  end
+  object BindSourceDB2: TBindSourceDB
+    DataSet = ClientDataSet1
+    ScopeMappings = <>
+    Left = 376
+    Top = 448
+  end
+  object ClientDataSet1: TClientDataSet
+    Active = True
+    Aggregates = <>
+    Params = <>
+    ProviderName = 'DataSetProvider1'
+    RemoteServer = DMDataSnap.DSProviderConnection1
+    Left = 472
+    Top = 448
+  end
+end
