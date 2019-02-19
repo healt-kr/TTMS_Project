@@ -3,7 +3,7 @@ object frmEvent: TfrmEvent
   Top = 0
   Caption = 'frmEvent'
   ClientHeight = 648
-  ClientWidth = 682
+  ClientWidth = 784
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -20,7 +20,7 @@ object frmEvent: TfrmEvent
   object DBGrid1: TDBGrid
     Left = 0
     Top = 433
-    Width = 682
+    Width = 784
     Height = 215
     TabStop = False
     Align = alClient
@@ -36,7 +36,7 @@ object frmEvent: TfrmEvent
   object Panel1: TPanel
     Left = 0
     Top = 0
-    Width = 682
+    Width = 784
     Height = 433
     Align = alTop
     TabOrder = 1
@@ -348,7 +348,7 @@ object frmEvent: TfrmEvent
       TabOrder = 1
     end
     object edtPartner: TDBEdit
-      Left = 288
+      Left = 294
       Top = 45
       Width = 121
       Height = 26

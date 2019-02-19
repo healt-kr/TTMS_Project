@@ -12,7 +12,9 @@ uses
   ManageEventForm in 'ManageEventForm.pas' {frmManageEvent},
   SearchForm in 'SearchForm.pas' {frmSearch},
   PartnerForm in 'PartnerForm.pas' {frmPartner},
-  HotelForm in 'HotelForm.pas' {frmHotel};
+  HotelForm in 'HotelForm.pas' {frmHotel},
+  ReservationForm in 'ReservationForm.pas' {frmReservation},
+  EstimateFrame in 'EstimateFrame.pas' {fraEstimate: TFrame};
 
 {$R *.res}
 
@@ -29,5 +31,6 @@ begin
   Application.CreateForm(TfrmSearch, frmSearch);
   Application.CreateForm(TfrmPartner, frmPartner);
   Application.CreateForm(TfrmHotel, frmHotel);
+  Application.CreateForm(TfrmReservation, frmReservation);
   Application.Run;
 end.

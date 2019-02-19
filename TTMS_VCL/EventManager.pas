@@ -204,8 +204,8 @@ end;
 {** 년월일(TDate)을 세개의 TEdit.Text에저장
   @param Date 년월일
   @param Year 년도 TEdit
-  @param Month 월 TMonth
-  @param Day 일  TEdit
+  @param Month 월  TEdit
+  @param Day 일    TEdit
 *}
 procedure TfrmEvent.SetDate2Edit(Date: TDate; edtYear: TEdit; edtMonth: TEdit; edtDay: TEdit);
 var

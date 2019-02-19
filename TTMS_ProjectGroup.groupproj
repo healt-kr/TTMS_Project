@@ -9,9 +9,6 @@
         <Projects Include="TTMS_DataSnap\TTMS_DataSnap.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="TTMS_FMX\TTMS_FMX.dproj">
-            <Dependencies/>
-        </Projects>
     </ItemGroup>
     <ProjectExtensions>
         <Borland.Personality>Default.Personality.12</Borland.Personality>
@@ -38,23 +35,14 @@
     <Target Name="TTMS_DataSnap:Make">
         <MSBuild Projects="TTMS_DataSnap\TTMS_DataSnap.dproj" Targets="Make"/>
     </Target>
-    <Target Name="TTMS_FMX">
-        <MSBuild Projects="TTMS_FMX\TTMS_FMX.dproj"/>
-    </Target>
-    <Target Name="TTMS_FMX:Clean">
-        <MSBuild Projects="TTMS_FMX\TTMS_FMX.dproj" Targets="Clean"/>
-    </Target>
-    <Target Name="TTMS_FMX:Make">
-        <MSBuild Projects="TTMS_FMX\TTMS_FMX.dproj" Targets="Make"/>
-    </Target>
     <Target Name="Build">
-        <CallTarget Targets="TTMS;TTMS_DataSnap;TTMS_FMX"/>
+        <CallTarget Targets="TTMS;TTMS_DataSnap"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="TTMS:Clean;TTMS_DataSnap:Clean;TTMS_FMX:Clean"/>
+        <CallTarget Targets="TTMS:Clean;TTMS_DataSnap:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="TTMS:Make;TTMS_DataSnap:Make;TTMS_FMX:Make"/>
+        <CallTarget Targets="TTMS:Make;TTMS_DataSnap:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
 </Project>

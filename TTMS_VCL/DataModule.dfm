@@ -2,12 +2,13 @@ object DataModule1: TDataModule1
   OldCreateOrder = False
   OnCreate = DataModuleCreate
   OnDestroy = DataModuleDestroy
-  Height = 169
-  Width = 294
+  Height = 422
+  Width = 620
   object FDConnection1: TFDConnection
     Params.Strings = (
       'Database=D:\TTMS_Project\ttms.sdb'
       'ConnectionDef=TTMS_SQLite')
+    Connected = True
     LoginPrompt = False
     Left = 47
     Top = 48

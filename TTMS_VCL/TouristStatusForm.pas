@@ -37,8 +37,17 @@ type
     edtToMonth: TEdit;
     edtToDay: TEdit;
     FDQueryManager: TFDQuery;
+    FDQuery1serial: TStringField;
+    FDQuery1reservation_date: TDateField;
+    FDQuery1event_start_date: TDateField;
+    FDQuery1customer_name: TStringField;
+    FDQuery1tourist_total: TWideStringField;
+    FDQuery1event_name: TStringField;
+    FDQuery1manager_name: TStringField;
     procedure Button1Click(Sender: TObject);
     procedure FormActivate(Sender: TObject);
+    procedure DBGrid1DblClick(Sender: TObject);
+    procedure FormDeactivate(Sender: TObject);
   private
     { Private declarations }
   public
@@ -52,8 +61,13 @@ implementation
 
 {$R *.dfm}
 
-uses DataModule, MyLib;
+uses DataModule, MyLib, ReservationForm;
 
+
+procedure TfrmTouristStatus.DBGrid1DblClick(Sender: TObject);
+begin
+  frmReservation.ShowWithSerial(FDQuery1.FieldByName('serial').AsString);
+end;
 
 procedure TfrmTouristStatus.FormActivate(Sender: TObject);
 begin
@@ -68,6 +82,13 @@ begin
     end;
     Close;
   end;
+
+  FDQuery1.Active := True;
+end;
+
+procedure TfrmTouristStatus.FormDeactivate(Sender: TObject);
+begin
+  FDQuery1.Active := False;
 end;
 
 procedure TfrmTouristStatus.Button1Click(Sender: TObject);
@@ -78,7 +99,7 @@ begin
   with FDQuery1 do begin
     Close;
     SQL.Clear;
-    SQL.Add('SELECT reservation_date, event_start_date, customer_name, (adult_total + child_total) as tourist_total, event_name, manager_name');
+    SQL.Add('SELECT serial, reservation_date, event_start_date, customer_name, (adult_total + child_total) as tourist_total, event_name, manager_name');
     SQL.Add('FROM event');
     SQL.Add('WHERE 1');
 

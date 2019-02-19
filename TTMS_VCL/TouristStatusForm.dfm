@@ -8,12 +8,13 @@ object frmTouristStatus: TfrmTouristStatus
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -15
-  Font.Name = 'Tahoma'
+  Font.Name = #46027#50880
   Font.Style = []
   OldCreateOrder = False
   OnActivate = FormActivate
+  OnDeactivate = FormDeactivate
   PixelsPerInch = 96
-  TextHeight = 18
+  TextHeight = 15
   object Panel1: TPanel
     Left = 0
     Top = 0
@@ -24,78 +25,78 @@ object frmTouristStatus: TfrmTouristStatus
     object Label1: TLabel
       Left = 40
       Top = 24
-      Width = 39
-      Height = 18
+      Width = 45
+      Height = 15
       Caption = #45812#45817#51088
     end
     object Label2: TLabel
       Left = 40
       Top = 53
-      Width = 39
-      Height = 18
+      Width = 45
+      Height = 15
       Caption = #54665#49324#47749
     end
     object Label7: TLabel
       Left = 53
       Top = 91
-      Width = 26
-      Height = 18
+      Width = 30
+      Height = 15
       Caption = #44592#44036
     end
     object Label24: TLabel
       Left = 260
       Top = 91
       Width = 11
-      Height = 18
+      Height = 15
       Caption = '~'
     end
     object Label29: TLabel
       Left = 127
       Top = 91
-      Width = 13
-      Height = 18
+      Width = 15
+      Height = 15
       Caption = #45380
     end
     object Label30: TLabel
       Left = 179
       Top = 91
-      Width = 13
-      Height = 18
+      Width = 15
+      Height = 15
       Caption = #50900
     end
     object Label31: TLabel
       Left = 231
       Top = 91
-      Width = 13
-      Height = 18
+      Width = 15
+      Height = 15
       Caption = #51068
     end
     object Label32: TLabel
       Left = 332
       Top = 91
-      Width = 13
-      Height = 18
+      Width = 15
+      Height = 15
       Caption = #45380
     end
     object Label33: TLabel
       Left = 384
       Top = 91
-      Width = 13
-      Height = 18
+      Width = 15
+      Height = 15
       Caption = #50900
     end
     object Label34: TLabel
       Left = 436
       Top = 91
-      Width = 13
-      Height = 18
+      Width = 15
+      Height = 15
       Caption = #51068
     end
     object cbxEvent: TComboBox
       Left = 85
       Top = 50
       Width = 145
-      Height = 26
+      Height = 23
       TabOrder = 1
     end
     object RadioGroup1: TRadioGroup
@@ -114,42 +115,42 @@ object frmTouristStatus: TfrmTouristStatus
       Left = 85
       Top = 88
       Width = 38
-      Height = 26
+      Height = 23
       TabOrder = 2
     end
     object edtFromMonth: TEdit
       Left = 146
       Top = 88
       Width = 27
-      Height = 26
+      Height = 23
       TabOrder = 3
     end
     object edtFromDay: TEdit
       Left = 198
       Top = 88
       Width = 27
-      Height = 26
+      Height = 23
       TabOrder = 4
     end
     object edtToYear: TEdit
       Left = 288
       Top = 88
       Width = 38
-      Height = 26
+      Height = 23
       TabOrder = 5
     end
     object edtToMonth: TEdit
       Left = 351
       Top = 88
       Width = 27
-      Height = 26
+      Height = 23
       TabOrder = 6
     end
     object edtToDay: TEdit
       Left = 403
       Top = 88
       Width = 27
-      Height = 26
+      Height = 23
       TabOrder = 7
     end
   end
@@ -165,8 +166,9 @@ object frmTouristStatus: TfrmTouristStatus
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText
     TitleFont.Height = -15
-    TitleFont.Name = 'Tahoma'
+    TitleFont.Name = #46027#50880
     TitleFont.Style = []
+    OnDblClick = DBGrid1DblClick
     Columns = <
       item
         Expanded = False
@@ -211,7 +213,7 @@ object frmTouristStatus: TfrmTouristStatus
     Left = 85
     Top = 21
     Width = 145
-    Height = 26
+    Height = 23
     TabOrder = 0
   end
   object Button1: TButton
@@ -226,7 +228,9 @@ object frmTouristStatus: TfrmTouristStatus
   object FDQuery1: TFDQuery
     Connection = DataModule1.FDConnection1
     SQL.Strings = (
-      'SELECT reservation_date, event_start_date, customer_name,'
+      
+        'SELECT serial, reservation_date, event_start_date, customer_name' +
+        ','
       
         '  (adult_total + child_total) as tourist_total, event_name, mana' +
         'ger_name'
@@ -234,6 +238,47 @@ object frmTouristStatus: TfrmTouristStatus
       '')
     Left = 272
     Top = 280
+    object FDQuery1serial: TStringField
+      FieldName = 'serial'
+      Origin = 'serial'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      Required = True
+      FixedChar = True
+      Size = 11
+    end
+    object FDQuery1reservation_date: TDateField
+      FieldName = 'reservation_date'
+      Origin = 'reservation_date'
+      Required = True
+    end
+    object FDQuery1event_start_date: TDateField
+      FieldName = 'event_start_date'
+      Origin = 'event_start_date'
+    end
+    object FDQuery1customer_name: TStringField
+      FieldName = 'customer_name'
+      Origin = 'customer_name'
+    end
+    object FDQuery1tourist_total: TWideStringField
+      AutoGenerateValue = arDefault
+      FieldName = 'tourist_total'
+      Origin = 'tourist_total'
+      ProviderFlags = []
+      ReadOnly = True
+      Size = 32767
+    end
+    object FDQuery1event_name: TStringField
+      FieldName = 'event_name'
+      Origin = 'event_name'
+      Required = True
+      Size = 40
+    end
+    object FDQuery1manager_name: TStringField
+      FieldName = 'manager_name'
+      Origin = 'manager_name'
+      Required = True
+      Size = 10
+    end
   end
   object DataSource1: TDataSource
     DataSet = FDQuery1
