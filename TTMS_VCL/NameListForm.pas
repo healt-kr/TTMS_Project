@@ -76,6 +76,7 @@ type
     Button5: TButton;
     Label15: TLabel;
     Button1: TButton;
+    procedure Button1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -89,5 +90,12 @@ implementation
 
 {$R *.dfm}
 
+uses RoomingListForm;
+
+
+procedure TfrmNameList.Button1Click(Sender: TObject);
+begin
+  frmRoomingList.Show;
+end;
 
 end.

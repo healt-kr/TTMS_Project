@@ -319,6 +319,7 @@
       Caption = 'ROOM'
       TabOrder = 21
       TabStop = False
+      OnClick = Button1Click
     end
   end
   object Panel2: TPanel
