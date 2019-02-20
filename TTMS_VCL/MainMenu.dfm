@@ -12704,9 +12704,8 @@ object frmMenu: TfrmMenu
       Width = 122
       Height = 49
       Caption = #51077#52636#44552#44288#47532
-      Enabled = False
       TabOrder = 9
-      OnClick = btnReservationClick
+      OnClick = btnBankingClick
     end
     object btnCancel: TButton
       Left = 15

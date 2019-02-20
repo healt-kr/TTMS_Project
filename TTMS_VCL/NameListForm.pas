@@ -95,7 +95,7 @@ uses RoomingListForm;
 
 procedure TfrmNameList.Button1Click(Sender: TObject);
 begin
-  frmRoomingList.Show;
+   frmRoomingList.Show;
 end;
 
 end.

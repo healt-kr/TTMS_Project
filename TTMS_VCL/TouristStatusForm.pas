@@ -12,30 +12,9 @@ uses
 
 type
   TfrmTouristStatus = class(TForm)
-    Panel1: TPanel;
     DBGrid1: TDBGrid;
     FDQuery1: TFDQuery;
-    Label1: TLabel;
-    cbxManager: TComboBox;
-    Label2: TLabel;
-    cbxEvent: TComboBox;
-    RadioGroup1: TRadioGroup;
-    Button1: TButton;
     DataSource1: TDataSource;
-    Label7: TLabel;
-    Label24: TLabel;
-    Label29: TLabel;
-    Label30: TLabel;
-    Label31: TLabel;
-    Label32: TLabel;
-    Label33: TLabel;
-    Label34: TLabel;
-    edtFromYear: TEdit;
-    edtFromMonth: TEdit;
-    edtFromDay: TEdit;
-    edtToYear: TEdit;
-    edtToMonth: TEdit;
-    edtToDay: TEdit;
     FDQueryManager: TFDQuery;
     FDQuery1serial: TStringField;
     FDQuery1from_date: TDateField;
@@ -43,10 +22,35 @@ type
     FDQuery1event_name: TStringField;
     FDQuery1manager_name: TStringField;
     FDQuery1created_at: TSQLTimeStampField;
+    Panel2: TPanel;
+    Label1: TLabel;
+    Label2: TLabel;
+    Label7: TLabel;
+    Label29: TLabel;
+    Label30: TLabel;
+    Label31: TLabel;
+    Label24: TLabel;
+    Label32: TLabel;
+    Label33: TLabel;
+    Label34: TLabel;
+    cbxManager: TComboBox;
+    btnPost: TButton;
+    cbxEvent: TComboBox;
+    edtFromYear: TEdit;
+    edtFromMonth: TEdit;
+    edtFromDay: TEdit;
+    edtToYear: TEdit;
+    edtToMonth: TEdit;
+    edtToDay: TEdit;
+    RadioGroup1: TRadioGroup;
+    Button2: TButton;
+    Button3: TButton;
     procedure Button1Click(Sender: TObject);
     procedure FormActivate(Sender: TObject);
     procedure DBGrid1DblClick(Sender: TObject);
     procedure FormDeactivate(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
+    procedure Button3Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -60,8 +64,51 @@ implementation
 
 {$R *.dfm}
 
-uses DataModule, MyLib, ReservationForm;
+uses DataModule, MyLib, ReservationForm, IncomeForm;
 
+
+procedure TfrmTouristStatus.Button2Click(Sender: TObject);
+var
+  DateField: string;
+  FromDate, ToDate: TDate;
+begin
+  with FDQuery1 do begin
+    Close;
+    SQL.Clear;
+    SQL.Add('SELECT serial, reservation_date, event_start_date, customer_name, (adult_total + child_total) as tourist_total, event_name, manager_name');
+    SQL.Add('FROM event');
+    SQL.Add('WHERE 1');
+
+    if cbxManager.Text <> '' then
+      SQL.Add('AND manager_name like "%' + cbxManager.Text + '%"');
+
+    if cbxEvent.Text <> '' then
+      SQL.Add('AND event_name like "%' + cbxEvent.Text + '%"');
+
+    if RadioGroup1.ItemIndex = 0 then
+    begin
+      DateField := 'reservation_date';
+    end else
+    begin
+      DateField := 'event_start_date';
+    end;
+
+    if Convert3TextToDate(FromDate, edtFromYear.Text, edtFromMonth.Text, edtFromDay.Text) then
+      SQL.Add('AND ' + DateField + ' >= "'
+        + FormatDateTime('yyyy-mm-dd', FromDate) + '"');
+
+    if Convert3TextTodate(ToDate, edtToYear.Text, edtToMonth.Text, edtToDay.Text) then
+      SQL.Add('AND ' + DateField + ' >= "'
+        + FormatDateTime('yyyy-mm-dd', ToDate) + '"');
+
+    Open;
+  end;
+end;
+
+procedure TfrmTouristStatus.Button3Click(Sender: TObject);
+begin
+  frmIncome.Show;
+end;
 
 procedure TfrmTouristStatus.DBGrid1DblClick(Sender: TObject);
 begin

@@ -16,7 +16,9 @@ uses
   ReservationForm in 'ReservationForm.pas' {frmReservation},
   EstimateFrame in 'EstimateFrame.pas' {fraEstimate: TFrame},
   NameListForm in 'NameListForm.pas' {frmNameList},
-  RoomingListForm in 'RoomingListForm.pas' {frmRoomingList};
+  RoomingListForm in 'RoomingListForm.pas' {frmRoomingList},
+  IncomeForm in 'IncomeForm.pas' {frmIncome},
+  BankForm in 'BankForm.pas' {frmBank};
 
 {$R *.res}
 
@@ -36,5 +38,7 @@ begin
   Application.CreateForm(TfrmReservation, frmReservation);
   Application.CreateForm(TfrmNameList, frmNameList);
   Application.CreateForm(TfrmRoomingList, frmRoomingList);
+  Application.CreateForm(TfrmIncome, frmIncome);
+  Application.CreateForm(TfrmBank, frmBank);
   Application.Run;
 end.

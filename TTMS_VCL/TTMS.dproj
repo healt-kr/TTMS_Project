@@ -149,6 +149,14 @@
             <Form>frmRoomingList</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="IncomeForm.pas">
+            <Form>frmIncome</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="BankForm.pas">
+            <Form>frmBank</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

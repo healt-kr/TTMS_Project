@@ -40,6 +40,7 @@ type
     procedure btnPartnerClick(Sender: TObject);
     procedure btnHotelClick(Sender: TObject);
     procedure btnCalculateClick(Sender: TObject);
+    procedure btnBankingClick(Sender: TObject);
   private
     { Private declarations }
     procedure SetAllButton;
@@ -55,7 +56,7 @@ implementation
 {$R *.dfm}
 
 uses JSON, DataModule, EventManager, Manager, TouristStatusForm, CustomerForm,
-  ManageEventForm, PartnerForm, HotelForm, ReservationForm, Unit3;
+  ManageEventForm, PartnerForm, HotelForm, ReservationForm, BankForm;
 
 {** DB에서 사용권한을 읽어와서
   해당 버튼의 Enable을 설정한다
@@ -104,9 +105,14 @@ begin
   frmTouristStatus.Show;
 end;
 
+procedure TfrmMenu.btnBankingClick(Sender: TObject);
+begin
+  frmBank.Show;
+end;
+
 procedure TfrmMenu.btnCalculateClick(Sender: TObject);
 begin
-  Form3.Show;
+//  Form3.Show;
 end;
 
 procedure TfrmMenu.btnCustomerClick(Sender: TObject);
