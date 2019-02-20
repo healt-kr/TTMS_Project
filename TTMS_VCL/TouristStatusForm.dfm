@@ -169,45 +169,6 @@ object frmTouristStatus: TfrmTouristStatus
     TitleFont.Name = #46027#50880
     TitleFont.Style = []
     OnDblClick = DBGrid1DblClick
-    Columns = <
-      item
-        Expanded = False
-        FieldName = 'event_start_date'
-        Title.Caption = #52636#48156#51068
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = 'reservation_date'
-        Title.Caption = #51217#49688#51068
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = 'customer_name'
-        Title.Caption = #44256#44061#47749
-        Width = 92
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = 'tourist_total'
-        Title.Caption = #51064#50896
-        Width = 40
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = 'event_name'
-        Title.Caption = #54665#49324#47749
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = 'manager_name'
-        Title.Caption = #45812#45817#51088
-        Visible = True
-      end>
   end
   object cbxManager: TComboBox
     Left = 85
@@ -226,58 +187,41 @@ object frmTouristStatus: TfrmTouristStatus
     OnClick = Button1Click
   end
   object FDQuery1: TFDQuery
+    Active = True
+    Filtered = True
     Connection = DataModule1.FDConnection1
     SQL.Strings = (
-      
-        'SELECT serial, reservation_date, event_start_date, customer_name' +
-        ','
-      
-        '  (adult_total + child_total) as tourist_total, event_name, mana' +
-        'ger_name'
-      'FROM event'
+      'SELECT serial, from_date, customer_name,'
+      '  event_name, manager_name, created_at'
+      'FROM events'
       '')
     Left = 272
     Top = 280
     object FDQuery1serial: TStringField
       FieldName = 'serial'
-      Origin = 'serial'
-      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
       Required = True
       FixedChar = True
       Size = 11
     end
-    object FDQuery1reservation_date: TDateField
-      FieldName = 'reservation_date'
-      Origin = 'reservation_date'
-      Required = True
-    end
-    object FDQuery1event_start_date: TDateField
-      FieldName = 'event_start_date'
-      Origin = 'event_start_date'
+    object FDQuery1from_date: TDateField
+      FieldName = 'from_date'
     end
     object FDQuery1customer_name: TStringField
       FieldName = 'customer_name'
-      Origin = 'customer_name'
-    end
-    object FDQuery1tourist_total: TWideStringField
-      AutoGenerateValue = arDefault
-      FieldName = 'tourist_total'
-      Origin = 'tourist_total'
-      ProviderFlags = []
-      ReadOnly = True
-      Size = 32767
     end
     object FDQuery1event_name: TStringField
       FieldName = 'event_name'
-      Origin = 'event_name'
       Required = True
       Size = 40
     end
     object FDQuery1manager_name: TStringField
       FieldName = 'manager_name'
-      Origin = 'manager_name'
       Required = True
       Size = 10
+    end
+    object FDQuery1created_at: TSQLTimeStampField
+      FieldName = 'created_at'
+      Required = True
     end
   end
   object DataSource1: TDataSource

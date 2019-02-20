@@ -38,12 +38,11 @@ type
     edtToDay: TEdit;
     FDQueryManager: TFDQuery;
     FDQuery1serial: TStringField;
-    FDQuery1reservation_date: TDateField;
-    FDQuery1event_start_date: TDateField;
+    FDQuery1from_date: TDateField;
     FDQuery1customer_name: TStringField;
-    FDQuery1tourist_total: TWideStringField;
     FDQuery1event_name: TStringField;
     FDQuery1manager_name: TStringField;
+    FDQuery1created_at: TSQLTimeStampField;
     procedure Button1Click(Sender: TObject);
     procedure FormActivate(Sender: TObject);
     procedure DBGrid1DblClick(Sender: TObject);
@@ -88,7 +87,7 @@ end;
 
 procedure TfrmTouristStatus.FormDeactivate(Sender: TObject);
 begin
-  FDQuery1.Active := False;
+//  FDQuery1.Active := False;
 end;
 
 procedure TfrmTouristStatus.Button1Click(Sender: TObject);

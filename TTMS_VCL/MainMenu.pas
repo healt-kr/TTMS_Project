@@ -96,8 +96,7 @@ end;
 
 procedure TfrmMenu.btnReservationClick(Sender: TObject);
 begin
-//  frmEvent.Show;
-  frmReservation.Show;
+  frmReservation.InsertMode;
 end;
 
 procedure TfrmMenu.btnTouristClick(Sender: TObject);

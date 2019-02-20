@@ -12621,7 +12621,7 @@ object frmMenu: TfrmMenu
       Top = 16
       Width = 122
       Height = 49
-      Caption = #50696#50557#44288#47532
+      Caption = #50696#50557#51217#49688
       TabOrder = 0
       OnClick = btnReservationClick
     end

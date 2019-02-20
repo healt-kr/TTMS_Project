@@ -3,6 +3,7 @@ unit MyLib;
 interface
 
 function Convert3TextToDate(var Date: TDate; Year: string; Month: string; Day: string): Boolean;
+function NumberToString(Number: integer): string;
 
 implementation
 
@@ -58,6 +59,12 @@ begin
   result := True;
 end;
 
-
+function NumberToString(Number: Integer): string;
+begin
+  if Number = 0 then
+    result := ''
+  else
+    result := IntToStr(Number);
+end;
 
 end.
