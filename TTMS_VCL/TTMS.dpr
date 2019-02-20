@@ -14,7 +14,8 @@ uses
   PartnerForm in 'PartnerForm.pas' {frmPartner},
   HotelForm in 'HotelForm.pas' {frmHotel},
   ReservationForm in 'ReservationForm.pas' {frmReservation},
-  EstimateFrame in 'EstimateFrame.pas' {fraEstimate: TFrame};
+  EstimateFrame in 'EstimateFrame.pas' {fraEstimate: TFrame},
+  NameListForm in 'NameListForm.pas' {frmNameList};
 
 {$R *.res}
 
@@ -32,5 +33,6 @@ begin
   Application.CreateForm(TfrmPartner, frmPartner);
   Application.CreateForm(TfrmHotel, frmHotel);
   Application.CreateForm(TfrmReservation, frmReservation);
+  Application.CreateForm(TfrmNameList, frmNameList);
   Application.Run;
 end.
